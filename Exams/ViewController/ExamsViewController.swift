@@ -37,7 +37,7 @@ class ExamsViewController: UIViewController {
   var exams: Results<Exam>?
 
   override func viewDidLoad() {
-    let realm = try! Realm()
+    let realm = try! Realm(configuration: RealmConfig.Main.configuration)
     exams = realm.objects(Exam).sorted("date", ascending: false)
   }
 
